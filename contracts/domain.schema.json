@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "普惠文旅委托履约账领域事件",
+  "type": "object",
+  "required": [
+    "event_id",
+    "event_type",
+    "aggregate_type",
+    "aggregate_id",
+    "occurred_at",
+    "version",
+    "summary"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "ORDER_ACCEPTED",
+        "CUSTODY_TRANSFERRED",
+        "REROUTE_REQUESTED",
+        "EXCEPTION_OPENED",
+        "SETTLEMENT_ISSUED"
+      ]
+    },
+    "aggregate_type": {
+      "type": "string",
+      "enum": [
+        "luggage_order",
+        "custody_segment",
+        "reroute_case",
+        "settlement_cycle"
+      ]
+    },
+    "aggregate_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

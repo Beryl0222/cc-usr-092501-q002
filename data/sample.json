@@ -1,0 +1,9 @@
+{
+  "event_id": "092501-002-sample-001",
+  "event_type": "ORDER_ACCEPTED",
+  "aggregate_type": "luggage_order",
+  "aggregate_id": "inclusive_tourism_service_contract-001",
+  "occurred_at": "2026-09-24T10:00:00+08:00",
+  "version": 1,
+  "summary": "登记普惠文旅委托履约账的一条领域事实"
+}
