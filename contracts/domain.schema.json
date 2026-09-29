@@ -20,9 +20,22 @@
       "type": "string",
       "enum": [
         "ORDER_ACCEPTED",
+        "ORDER_DELIVERED",
+        "LUGGAGE_COLLECTED",
+        "SEGMENT_PLANNED",
+        "SEGMENT_DISPATCHED",
+        "SEGMENT_CANCELLED",
+        "HANDOVER_SCAN_RECORDED",
         "CUSTODY_TRANSFERRED",
+        "MANUAL_REVIEW_OPENED",
         "REROUTE_REQUESTED",
+        "REROUTE_APPLIED",
+        "REROUTE_ORDER_APPENDED",
         "EXCEPTION_OPENED",
+        "STORAGE_OPENED",
+        "CLAIM_OPENED",
+        "CLAIM_LIABILITY_ASSESSED",
+        "CLAIM_SETTLED",
         "SETTLEMENT_ISSUED"
       ]
     },
@@ -32,6 +45,8 @@
         "luggage_order",
         "custody_segment",
         "reroute_case",
+        "exception_case",
+        "claim_case",
         "settlement_cycle"
       ]
     },

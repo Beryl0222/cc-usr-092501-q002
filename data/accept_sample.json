@@ -1,0 +1,28 @@
+{
+  "voucher_id": "V-20260930-001",
+  "seal_no": "SEAL-1001",
+  "destination": "scenic",
+  "piece_count": 2,
+  "appearance_summary": "黑色20寸登机箱，外观完好",
+  "content_hints": ["易碎品"],
+  "window_start": "2026-09-30T09:00:00+08:00",
+  "window_end": "2026-09-30T18:00:00+08:00",
+  "authorized_recipients": ["tok-alice"],
+  "occurred_at": "2026-09-30T08:30:00+08:00",
+  "legs": [
+    {
+      "carrier_id": "carrier-1",
+      "from_point": "rail-station",
+      "to_point": "hotel-a",
+      "window_start": "2026-09-30T09:00:00+08:00",
+      "window_end": "2026-09-30T11:00:00+08:00"
+    },
+    {
+      "carrier_id": "carrier-2",
+      "from_point": "hotel-a",
+      "to_point": "scenic",
+      "window_start": "2026-09-30T14:00:00+08:00",
+      "window_end": "2026-09-30T16:00:00+08:00"
+    }
+  ]
+}
