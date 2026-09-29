@@ -1,9 +1,47 @@
 {
-  "event_id": "092501-002-sample-001",
+  "event_id": "evt-0929-hsr-0001",
   "event_type": "ORDER_ACCEPTED",
   "aggregate_type": "luggage_order",
-  "aggregate_id": "inclusive_tourism_service_contract-001",
-  "occurred_at": "2026-09-24T10:00:00+08:00",
+  "aggregate_id": "HSR20260929-0007",
+  "occurred_at": "2026-09-29T10:00:00+08:00",
   "version": 1,
-  "summary": "登记普惠文旅委托履约账的一条领域事实"
+  "summary": "受理 2 件行李，冻结送达窗与授权收件人",
+  "command_id": "cmd-accept-HSR20260929-0007",
+  "payload": {
+    "order_id": "HSR20260929-0007",
+    "tourist_ref": "tourist:li",
+    "piece_count": 2,
+    "seal_ids": ["seal-9f01", "seal-9f02"],
+    "appearance": "黑色28寸硬箱，外绑红绳；灰色双肩包",
+    "privacy_hints": "提示：箱内有移动电源，仅外观交接不开箱清点",
+    "final_destination": "node:qingshan-gate",
+    "window_start": "2026-09-29T10:00:00+08:00",
+    "window_end": "2026-09-29T15:00:00+08:00",
+    "authorized_recipients": ["tourist:li"],
+    "initial_custodian": "node:station",
+    "route": [
+      {
+        "seq": 1,
+        "seg_type": "station_hotel",
+        "carrier": "carrier:chengxin",
+        "from_party": "node:station",
+        "to_party": "node:lakeside-hotel",
+        "from_node": "node:station",
+        "to_node": "node:lakeside-hotel",
+        "delivers_to_tourist": false,
+        "expected_by": "2026-09-29T12:00:00+08:00"
+      },
+      {
+        "seq": 2,
+        "seg_type": "hotel_scenic",
+        "carrier": "carrier:chengxin",
+        "from_party": "node:lakeside-hotel",
+        "to_party": "tourist:li",
+        "from_node": "node:lakeside-hotel",
+        "to_node": "node:qingshan-gate",
+        "delivers_to_tourist": true,
+        "expected_by": "2026-09-29T15:00:00+08:00"
+      }
+    ]
+  }
 }

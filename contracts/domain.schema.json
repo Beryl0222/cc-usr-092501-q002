@@ -9,20 +9,33 @@
     "aggregate_id",
     "occurred_at",
     "version",
-    "summary"
+    "summary",
+    "payload"
   ],
   "properties": {
     "event_id": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "description": "全局唯一；同一回执完全重传不得复用为不同内容"
     },
     "event_type": {
       "type": "string",
       "enum": [
         "ORDER_ACCEPTED",
+        "MANUAL_REVIEW_OPENED",
+        "MANUAL_REVIEW_RESOLVED",
+        "SCAN_RECORDED",
         "CUSTODY_TRANSFERRED",
+        "DELIVERY_COMPLETED",
         "REROUTE_REQUESTED",
+        "REROUTE_APPLIED",
+        "REDISPATCH_ISSUED",
         "EXCEPTION_OPENED",
+        "INQUIRY_OPENED",
+        "EXCEPTION_UPGRADED",
+        "TEMP_STORAGE_OPENED",
+        "TEMP_STORAGE_RELEASED",
+        "LIABILITY_DETERMINED",
         "SETTLEMENT_ISSUED"
       ]
     },
@@ -32,6 +45,8 @@
         "luggage_order",
         "custody_segment",
         "reroute_case",
+        "exception_case",
+        "manual_review",
         "settlement_cycle"
       ]
     },
@@ -45,12 +60,26 @@
     },
     "version": {
       "type": "integer",
-      "minimum": 1
+      "minimum": 1,
+      "description": "凭证流内按发生时间合并后的规范版本"
     },
     "summary": {
       "type": "string",
       "minLength": 1
+    },
+    "payload": {
+      "type": "object",
+      "properties": {
+        "order_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "command_id": {
+      "type": "string",
+      "description": "可选；携带时提供命令幂等，重启重放不重复执行"
     }
   },
-  "additionalProperties": true
+  "additionalProperties": false
 }
